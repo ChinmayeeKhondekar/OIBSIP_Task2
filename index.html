@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website_Chinmayee Khondekar</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="Header">
+        <div class="Container">
+            <nav>
+                <ul id="Side_menu">
+                    <li><a href="#Header">Home</a></li>
+                    <li><a href="#Projects">Projects</a></li>
+                    <li><a href="#About">About</a></li>
+                    <!--<li><a href="#portfolio">Portfolio</a></li>-->
+                    <li><a href="#Contact">Contacts</a></li>
+                    <i class="fa-solid fa-xmark" onclick="Close_menu()"></i>
+                </ul>
+                <i class="fa-solid fa-bars" onclick="Open_menu()"></i>
+            </nav>
+            <div class="Header_Text">
+               
+                <h1>Hey There! I am<br> <span>Chinmayee Khondekar</span><br>Electronics Undergrad</h1>
+            </div>
+        </div>
+    </div>
+    <!------------------about------------------------->
+    <div id="About">
+        <div class="Container">
+            <div class="Row">
+                <div class="About_col_1">
+                    <img src="image.jpg">
+                </div>
+                <div class="About_col_2">
+                    <h1 class="Sub_title">About Me</h1>
+                    <p>Hey! I'm Chinmayee Khondekar, an Electronics undergraduate with a keen interest and proficient in C, C++ Programming alongwith with Web Development. A meticulous, organized and passionate individual and willing to find a relevant opportunity that will allow me to utilize my technical skills, experience and willingness to learn in making an organization successful.</p>
+
+                    <div class="Tab_titles">
+                        <p class="Tab_links" onclick="Open_tab('Education')">Education</p>
+                        <p class="Tab_links Active_link" onclick="Open_tab('Skills')">Skills</p>
+                        <p class="Tab_links" onclick="Open_tab('Experience')">Experience</p>
+                       
+                    </div>
+                    <div class="Tab_contents" id="Education">
+                        <ul>
+                            <li><span>2018-2020</span><br>Higher Secondary Education in Science & Electronics from LAD College, Nagpur</li>
+                            <li><span>2020-2024</span><br>B Tech in Electronics Engineering from G.H. Raisoni College Of Engineering, Nagpur<li>
+                        </ul>
+                    </div>
+                    <div class="Tab_contents Active_tab" id="Skills">
+                        <ul>
+                            <li><span>Programming</span><br>C, C++</li>
+                            <li><span>Web Development</span><br>Webpage Landpage</li>
+                            <li><span>Data Structure</span><br>Introduction to data structure</li>
+                        </ul>
+                    </div>
+                    <div class="Tab_contents" id="Experience">
+                        <ul>
+                            <li><span>2023</span><br>Web Development internship from Teachnook .</li>
+                        </ul>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+   
+     <!---------------------projects------------------------>
+     <div id="Projects">
+        <div class="Container">
+            <h1 class="sub-title">My Projects</h1>
+            <div class="services-list">
+                <div>
+                    <img src="image1.png">
+                    <h2>Landing Page</h2>
+                    <p>A landing page is a webpage designed to persuade users to take one specific action.</p>
+                    <!--<a href="#">Learn more</a>-->
+                </div>
+                <div>
+                    <img src="image2.jpg">
+                    <h2>Portfolio</h2>
+                    <p>A Portfolio is a systematic collection of work that represents activities, accomplishments and achievements over a specific period of time in one or more areas of the curriculum.</p>
+                    <!--<a href="#">Learn more</a>-->
+                </div>
+                <div>
+                    <img src="image3.webp">
+                    <h2>Temperature Converter</h2>
+                    <p>A temperature converter helps in the conversion of the measurement units of the temperature recorded in a particular unit.</p>
+                    <!--<a href="#">Learn more</a>-->
+                </div>
+            </div>
+        </div>
+    </div>
+   
+<div id="Contact">
+    <div class="Container">
+        <div class="Row">
+            <div class="Contact_left">
+                <h1 class="Sub_title">Contact Me</h1>
+                <p><i class="fa-solid fa-paper-plane"></i>chinmayeekhondekar23@gmail.com</p>
+                <div class="social-icons">
+                    <a href=""><i class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-twitter"></i></a>
+                    <a href=""><i class="fa-brands fa-square-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/chinmayee-khondekar-822487233"><i class="fa-brands fa-linkedin"></i></a>
+                </div>
+                <a href="" download class="btn btn2">Download My CV</a>
+            </div>
+            <div class="Contact_right">
+                <form name="submit-to-google-sheet">
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+                <span id="Msg"></span>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<script>
+    var sidemenu = document.getElementById("Side_menu");
+    function Open_menu(){
+        sidemenu.style.right = "0";
+    }
+    function Close_menu(){
+        sidemenu.style.right = "-190px";
+    }
+</script>
+<script>
+    
+    const msg = document.getElementById("Msg")
+
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
+
+    <script>
+        var tablinks = document.getElementsByClassName("Tab_links");
+        var tabcontents = document.getElementsByClassName("Tab_contents");
+        
+        function Open_tab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("Active_link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("Active_tab");
+            }
+           event.currentTarget.classList.add("Active_link");
+           document.getElementById(tabname).classList.add("Active_tab");
+        }
+    </script>
+</body>
+</html>
